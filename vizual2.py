@@ -60,7 +60,7 @@ fig = px.scatter_geo(df,
                      color_continuous_scale='RdYlGn', # Red (bad) to Green (good)
                      scope='europe',
                      title='Drive Test Route in Salzburg (Colored by Signal Strength)',
-                     hover_data=['Time', 'PCI', 'RSRP', 'SINR'],
+                     hover_data=['Time', 'Cell_Id', 'PCI', 'RSRP', 'SINR'],
                      height=600)
 
 fig.update_geos(center=dict(lat=47.85, lon=13.15), projection_scale=10)
@@ -111,12 +111,12 @@ plt.show()
 
 # --- 4. HANDOVER & CELL TOWER ANALYSIS ---
 
-# PCI (Physical Cell ID) indicates which tower sector the phone is connected to.
-# Changes in PCI indicate a "Handover" event.
+# Cell_Id (Cell Identity) indicates which tower sector the phone is connected to.
+# Changes in Cell_Id indicate a "Handover" event.
 
 # Identify Handovers
-df['PCI_Change'] = df['PCI'].diff().fillna(0)
-handover_events = df[df['PCI_Change'] != 0]
+df['Cell_Id_Change'] = df['Cell_Id'].diff().fillna(0)
+handover_events = df[df['Cell_Id_Change'] != 0]
 
 print(f"\nTotal Handovers detected: {len(handover_events)}")
 
@@ -124,7 +124,7 @@ print(f"\nTotal Handovers detected: {len(handover_events)}")
 handover_events.to_csv(os.path.join(output_folder, 'handover_events.csv'), index=False)
 print(f"Saved handover events to {output_folder}/handover_events.csv")
 
-# Plot PCI over Time
+# Plot Cell_Id (Tower ID) over Time
 fig_pci = go.Figure()
 
 # Add RSRP as a background trace
@@ -134,20 +134,20 @@ fig_pci.add_trace(go.Scatter(
     yaxis='y', opacity=0.5
 ))
 
-# Add PCI as a step plot
+# Add Cell_Id as a step plot
 fig_pci.add_trace(go.Scatter(
-    x=df['Time'], y=df['PCI'],
-    mode='lines+markers', name='PCI (Tower ID)',
+    x=df['Time'], y=df['Cell_Id'],
+    mode='lines+markers', name='Cell_Id (Tower ID)',
     line=dict(shape='hv'), # Step plot
     yaxis='y2'
 ))
 
 # Create layout with dual y-axes
 fig_pci.update_layout(
-    title='Signal Strength (RSRP) vs Tower Switching (PCI) over Time',
+    title='Signal Strength (RSRP) vs Tower Switching (Cell_Id) over Time',
     xaxis=dict(title='Time'),
     yaxis=dict(title='RSRP (dBm)', side='left'),
-    yaxis2=dict(title='PCI (Tower ID)', side='right', overlaying='y', showgrid=False),
+    yaxis2=dict(title='Cell_Id (Tower ID)', side='right', overlaying='y', showgrid=False),
     legend=dict(x=0.01, y=0.99),
     height=500
 )
@@ -170,8 +170,8 @@ fig_speed.show()
 
 # Does elevation affect signal power?
 fig_elev = px.scatter(df, x='Elevation', y='RSRP', 
-                      color='PCI',
-                      title='Impact of Elevation on Signal Strength',
+                      color='Cell_Id',
+                      title='Impact of Elevation on Signal Strength (Colored by Tower)',
                       labels={'Elevation': 'Meters', 'RSRP': 'Signal Power (dBm)'})
 fig_elev.write_html(os.path.join(output_folder, 'elevation_impact_on_rsrp.html'))
 print(f"Saved elevation impact plot to {output_folder}/elevation_impact_on_rsrp.html")
