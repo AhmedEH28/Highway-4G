@@ -4,29 +4,22 @@ LTE drive-test analysis and visualization using Crawdad data. It focuses on spat
 
 ## dashboard
 
-The dashboard analyzes temporal, geospatial, and PCI-based behavior through KPI cards, map views, time-series plots, and handover analysis. Processed outputs are exported to [analysis_output/](analysis_output/) as HTML and CSV reports .
+The dashboard analyzes temporal, geospatial, and PCI-based behavior through KPI cards, map views, time-series plots, and handover analysis. Processed outputs are exported to [analysis_output/](analysis_output/) .
 
-Current dataset snapshot: **263,827** samples and **9,151** handovers, with quality classes of **20.9% Excellent**, **16.6% Moderate**, and **62.5% Poor**.
+Current dataset: **263,827** samples and **9,151** handovers, with quality classes of **20.9% Excellent**, **16.6% Moderate**, and **62.5% Poor**.
 
-## Main files
+### Run
 
-- [dashboard.py](dashboard.py)
-- [vizual2.py](vizual2.py)
-- [requirements_dashboard.txt](requirements_dashboard.txt)
-- [analysis_output/](analysis_output/)
+Install dependencies with `pip install -r requirements_dashboard.txt`, run `python dashboard.py`.
 
-## Run
+### Results Analysis
 
-Install dependencies with `pip install -r requirements_dashboard.txt`, run `python dashboard.py`, then open http://127.0.0.1:8050.
-
-## Media
-
-Dashboard screenshot:
+Dashboard:
 
 ![Dashboard Screenshot](analysis_output/image.png)
 
-Dashboard demo video:
+Dashboard demo video (embedded if supported by your Markdown viewer):
 
-[![Watch Dashboard Demo](analysis_output/image.png)](analysis_output/dashboard.mp4)
+<video src="analysis_output/dashboard.mp4" controls width="900"></video>
 
-If inline playback is not supported on your viewer, open directly: [analysis_output/dashboard.mp4](analysis_output/dashboard.mp4)
+If the player is not shown, open the file directly: [analysis_output/dashboard.mp4](analysis_output/dashboard.mp4)
