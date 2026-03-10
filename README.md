@@ -21,8 +21,12 @@ Install dependencies with `pip install -r requirements_dashboard.txt`, run `pyth
 
 ## Media
 
-Screenshots and demo video:
+Dashboard screenshot:
 
-- [assets/media/dashboard_geo.png](assets/media/dashboard_geo.png)
-- [assets/media/dashboard_timeseries.png](assets/media/dashboard_timeseries.png)
-- [assets/media/dashboard_demo.mp4](assets/media/dashboard_demo.mp4)
+![Dashboard Screenshot](analysis_output/image.png)
+
+Dashboard demo video (embedded if supported by your Markdown viewer):
+
+<video src="analysis_output/dashboard.mp4" controls width="900"></video>
+
+If the player is not shown, open the file directly: [analysis_output/dashboard.mp4](analysis_output/dashboard.mp4)
