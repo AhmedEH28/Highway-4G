@@ -25,8 +25,8 @@ Dashboard screenshot:
 
 ![Dashboard Screenshot](analysis_output/image.png)
 
-Dashboard demo video (embedded if supported by your Markdown viewer):
+Dashboard demo video:
 
-<video src="analysis_output/dashboard.mp4" controls width="900"></video>
+[![Watch Dashboard Demo](analysis_output/image.png)](analysis_output/dashboard.mp4)
 
-If the player is not shown, open the file directly: [analysis_output/dashboard.mp4](analysis_output/dashboard.mp4)
+If inline playback is not supported on your viewer, open directly: [analysis_output/dashboard.mp4](analysis_output/dashboard.mp4)
