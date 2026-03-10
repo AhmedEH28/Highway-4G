@@ -23,4 +23,4 @@ Dashboard demo:
 
 <video src="analysis_output/dashboard.mp4" controls width="900"></video>
 
-If the player is not shown, open the file directly: [analysis_output/dashboard.mp4](analysis_output/dashboard.mp4)
+[analysis_output/dashboard.mp4](analysis_output/dashboard.mp4)
