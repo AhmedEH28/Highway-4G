@@ -1,8 +1,8 @@
-# Highway-4G AIoT LTE Signal Analysis
+# Highway-4G LTE Signal Analysis
 
-LTE drive-test analysis and visualization using Crawdad data. It focuses on spatiotemporal signal understanding (RSRP, RSRQ, RSSI, SINR), handover-region identification, and clear dashboard-based evaluation of network quality. The implementation is centered on data processing, analytics, and interactive visualization for evaluating network performance across time and geography.
+LTE drive-test analysis and visualization using Crawdad data. It focuses on spatiotemporal signal understanding (RSRP, RSRQ, RSSI, SINR), handover-region identification, and clear dashboard-based evaluation of network quality. Focus on data processing, analytics, and interactive visualization for evaluating network performance across time and geography.
 
-## dashboard
+## Dashboard
 
 The dashboard analyzes temporal, geospatial, and PCI-based behavior through KPI cards, map views, time-series plots, and handover analysis. Processed outputs are exported to [analysis_output/](analysis_output/) .
 
@@ -18,7 +18,8 @@ Dashboard:
 
 ![Dashboard Screenshot](analysis_output/image.png)
 
-Dashboard demo video (embedded if supported by your Markdown viewer):
+
+Dashboard demo:
 
 <video src="analysis_output/dashboard.mp4" controls width="900"></video>
 
